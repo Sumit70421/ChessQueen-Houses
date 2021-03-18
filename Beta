@@ -1,0 +1,34 @@
+def QueenAttack(X,Y,P,Q):
+    xpos=[]
+    posX=X
+    while(posX<8):
+        posX=posX+1
+        xpos.append(posX)
+    
+    while(X>1):
+        X=X-1
+        xpos.append(X)
+    
+
+    ypos=[]
+    posY=Y
+    while(posY<8):
+        posY=posY+1
+        ypos.append(posY)
+    while(Y>1):
+        Y=Y-1
+        ypos.append(Y)
+    diag=[]
+    for i in range(len(xpos)):
+        diag.append((xpos[i],ypos[i]))
+        diag.append((xpos[i],Y))
+        diag.append((X,ypos[i]))
+    
+    print(diag)
+    '''for i in range(len(diag)):
+        if(diag[i]==(P,Q)):
+            return 1
+        else:
+            return 0'''
+            
+print(QueenAttack(2,3,1,3))
